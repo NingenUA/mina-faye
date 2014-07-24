@@ -31,7 +31,8 @@ describe "mina_faye" do
   end
 
   describe "setup" do
-    before { mina "setup" }
+    before(:all) { mina "setup" }
+
     it "should deploy" do
       begin
         # fresh deploy
@@ -47,15 +48,6 @@ describe "mina_faye" do
         raise e
       end
     end
-    it "should start/stop faye" do
-      faye_pid_path = @env_root.join("deploy", "shared", "pids", "faye.pid")
-      # fresh deploy
-      mina "faye:start"
-      pid = File.read(faye_pid_path)
-      check_process(pid).must_equal true
-      # second deploy
-      mina "faye:stop"
-      check_process(pid).must_equal true
-    end
+
   end
 end
