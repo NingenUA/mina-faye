@@ -1,4 +1,4 @@
-module MinaSidekiq
+module MinaFaye
   def self.version
     "0.1.0"
   end
