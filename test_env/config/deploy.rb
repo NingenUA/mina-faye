@@ -26,7 +26,6 @@ end
 
 task setup: :environment do
   queue! %[mkdir -p "#{deploy_to}/shared/pids/"]
-  queue! %[mkdir -p "#{deploy_to}/shared/log/"]
 end
 
 task deploy: :environment do
