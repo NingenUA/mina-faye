@@ -31,7 +31,7 @@ namespace :faye do
     queue %{
       echo "Faye starting in #{rails_env}"
       cd "#{deploy_to}/#{current_path}"
-      #{echo_cmd %[#{bundle_bin} exec nohup rackup #{faye_config}  -d -E #{rails_env} -p 9292 -P #{faye_pid} --daemonize ] }
+      #{echo_cmd %[#{bundle_bin} exec nohup rackup #{faye_config} -E #{rails_env} -p 9292 -P #{faye_pid} --daemonize ] }
           }
   end
 
